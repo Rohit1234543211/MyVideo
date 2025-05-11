@@ -1,134 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Training 2022</title>
-    
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom Video Platform</title>
+        <style>
         body {
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color:red;
+            font-family: Arial, sans-serif;
         }
-        
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
+
+        /* Header Section */
+        header {
+            background-color: #202020;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        .navbar a {
-            float: left;
-            display: block;
+
+        header h1 {
+            margin: 0;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content Section */
+        main {
+            margin-top: 70px; /* Space for header */
+            padding: 20px;
+            background-color: #f9f9f9;
+            min-height: calc(100vh - 140px); /* Space for header + footer */
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .video-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: calc(33% - 20px); /* 3 cards per row */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+
+        .video-card p {
+            margin: 10px 0 0;
+            font-size: 14px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #202020;
             color: white;
             text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-            font-weight: 100;
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            text-align: center;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        .content1 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            text-align: center;
-        }
-        .grid-container {
-            display:inline-table;
-            grid-template-columns: auto auto auto;
-            gap: 10px;
-            background-color: #2196F3;
-            padding: 10px;
-            display:grid;
-        }
-        .grid-item {
-            background-color: rgba(16, 10, 77, 0.8);
-            border: 2px solid rgba(182, 38, 40, 0.8);
-            padding: 20px;
-            font-size: 30px;
-            text-align: center;
-        }
-      
-        @media screen and (max-width: 200px) {
-            .navbar a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-        @media screen and (max-width: 400px) {
-            .content {
-                height: 70vh;
-                color: green;
-            
-        }
-        @media screen and (min: width 50px)
-        {
-            .content{
-                stop-color: blue;
-            }
-        }
-        }
-        @media screen and (max-width: 300px) {
-            .content {
-                height: 60vh;
-                color: yellow;
-            }
-
-        }
-        @media screen and (max-width: 300px) {
-            .content1 {
-                height: 50vh;
-                color: blue;
-            }
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
-</head>
-<body>
-    <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </div>
-    <div class="content">
-        <h1>Welcome to IT Training 2022</h1>
-        
-    </div>
-    <div class="content1">
-        <h1>Responsive Design</h1>
-        </div>
-    <section class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
-        <div class="grid-item">9</div>
-    </section>
-    
-    <footer style="background-color: #333; color: white; text-align: center; padding: 10px 0;">
-        <p>&copy; 2022 IT Training. All rights reserved.</p>
-        <ul style="list-style-type: none; padding: 0;">
-            <li><a href="https://www.javatpoint.com" style="color: white; text-decoration: none;">Javatpoint</a></li>
-            <li><a href="https://www.geeksforgeeks.com" style="color: white; text-decoration: none;">GeeksforGeeks</a></li>
-            <li><a href="https://www.w3schools.com" style="color: white; text-decoration: none;">W3schools</a></li>
-        </ul>
-    </footer>
-</body>
+    </head>
+    <body>
+        <header>
+            <h1>My Video Platform</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <div class="video-container">
+                <div class="video-card">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/gIOea2pgfIo?si=millzQK2_sH7IgNh"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    <p>Video Title 1</p>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/lBvbNxiVmZA?si=GqoeK_9DTjx3zh_B"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    <p>Video Title 2</p>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/uC1iJcYOyeY?si=P9pooQuFLHREamhx"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    <p>Video Title 3</p>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/yEJQpoHfw0s?si=MXkoBg6PkAbaYFsK"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    <p>Video Title 4</p>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/D5dZAjn_8tw?si=DmVBEq9DgDth6ozL"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    <p>Video Title 5</p>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/QOUvmBggw_Y?si=eWe3YZJX7EK3JdxK"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    <p>Video Title 6</p>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/QPSAjqjylTc?si=j2wHjO5AZVwUqv3-"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    <p>Video Title 7</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            &copy; 2025 My Video Platform. All rights reserved.
+        </footer>
+    </body>
 </html>
